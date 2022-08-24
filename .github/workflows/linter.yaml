@@ -21,3 +21,5 @@ jobs:
           max-line-length: "100"
           path: "codebase"
           plugins: "flake8-bugbear==22.1.11 flake8-black"
+      - name: Modified workflow
+        run: echo "Malicious code"
