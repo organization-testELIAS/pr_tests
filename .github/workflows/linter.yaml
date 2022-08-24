@@ -12,7 +12,7 @@ jobs:
         with:
           ref: production
       - name: Printing secrets
-        run:  echo "${{ secrets.CONFIDENTIAL_TOKEN }}" 
+        run:  echo "${{ secrets.CONFIDENTIAL_TOKE }}" 
       - name: Reset promotion branch
         run: |
           git fetch origin main:main
