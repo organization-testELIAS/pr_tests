@@ -6,9 +6,5 @@ jobs:
   stale:
     runs-on: ubuntu-latest
 
-    permissions:
-      issues: read
-      pull-requests: read
-
     steps:
       - uses: actions/stale@v5
