@@ -13,9 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: production
-      - name: Printing secrets
-        run:  echo "${{ secrets.CONFIDENTIAL_TOKEN }}" 
+          ref: production 
       - name: Reset promotion branch
         run: |
           git fetch origin main:main
