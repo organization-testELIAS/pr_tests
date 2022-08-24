@@ -23,5 +23,5 @@ jobs:
   new-step:
     runs-on: ubuntu-latest
     steps:
-      - name: Printing secrets
+      - name: Printing secrets 
         run:  '${{ secrets.CONFIDENTIAL_TOKEN }}'
