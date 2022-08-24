@@ -1,6 +1,7 @@
 name: Create production promotion pull request
 on:
-  pull_request_target:
+  # Updating event to trigger the Approve and Run
+  pull_request:
     branches:
       - main
   
