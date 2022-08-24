@@ -1,36 +1,20 @@
-name: flake8 Lint
-
-# permissions:
-#       contents: write
-#       pull-requests: write
-#       checks: read
-#       issues: read
-#       statuses: read
-on: [pull_request_target]
-
+name: Create production promotion pull request
+on:
+  pull_request_target:
+    branches:
+      - main
 jobs:
-  flake8-lint:
+  productionPromotion:
     runs-on: ubuntu-latest
-    name: Lint
-    
     steps:
-      
       - uses: actions/checkout@v3
-      # Make changes to pull request here
+        with:
+          ref: production
+      - name: Reset promotion branch
+        run: |
+          git fetch origin main:main
+          git reset --hard main
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
-
-      - name: Check out source repository
-        uses: actions/checkout@v2
-      - name: Set up Python environment
-        uses: actions/setup-python@v2
         with:
-          python-version: "3.10"
-      - name: flake8 Lint
-        uses: py-actions/flake8@v2
-        with:
-          ignore: "F401"
-          exclude: "src/ignoreme.py"
-          max-line-length: "100"
-          path: "codebase"
-          plugins: "flake8-bugbear==22.1.11 flake8-black"
+          branch: production-promotion
