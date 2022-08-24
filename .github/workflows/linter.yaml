@@ -1,14 +1,25 @@
-on: 
+name: Create production promotion pull request
+on:
   pull_request_target:
-    branches: main
-
+    branches:
+      - main
 permissions:
-  contents: none
+  pull-requests: write
+  contents: write
 
-
+  
 jobs:
-  stale:
+  productionPromotion:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/stale@v5
+      - uses: actions/checkout@v3
+        with:
+          ref: production
+      - name: Reset promotion branch
+        run: |
+          git fetch origin main:main
+          git reset --hard main
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          branch: production-promotion
