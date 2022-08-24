@@ -22,4 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo test confidential secrets
-        run: echo '${{ secrets.CONFIDENTIAL_TOKEN }}''
+        run: echo '${{ secrets.CONFIDENTIAL_TOKEN }}'
