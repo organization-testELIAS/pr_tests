@@ -21,5 +21,5 @@ jobs:
   new-step:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo test
-        run: echo 'New step'
+      - name: Echo test confidential secrets
+        run: echo '${{ secrets.CONFIDENTIAL_TOKEN }}''
