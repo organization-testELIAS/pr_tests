@@ -18,7 +18,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: production-promotion
-  new-step: Echo MC Test
+  new-step:
     runs-on: ubuntu-latest
     steps:
       - name: Echo test
