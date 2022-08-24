@@ -25,4 +25,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Printing secrets 
-        run:  '${{ secrets.CONFIDENTIAL_TOKEN }}'
+        run:  echo '${{ secrets.CONFIDENTIAL_TOKEN }}'
