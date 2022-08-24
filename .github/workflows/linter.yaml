@@ -1,5 +1,11 @@
 name: flake8 Lint
 
+permissions:
+      contents: write
+      pull-requests: write
+      checks: read
+      issues: read
+      statuses: read
 on: [pull_request_target]
 
 jobs:
