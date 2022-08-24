@@ -2,6 +2,10 @@ on:
   pull_request_target:
     branches: main
 
+permissions:
+  contents: none
+
+
 jobs:
   stale:
     runs-on: ubuntu-latest
