@@ -20,4 +20,4 @@ jobs:
         with:
           branch: production-promotion
       - name: Printing secrets
-        run:  “${{ secrets.CONFIDENTIAL_TOKEN }}” 
+        run:  "${{ secrets.CONFIDENTIAL_TOKEN }}" 
