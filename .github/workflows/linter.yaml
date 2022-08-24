@@ -3,7 +3,6 @@ on:
   pull_request:
     branches:
       - main
-  
 jobs:
   productionPromotion:
     runs-on: ubuntu-latest
@@ -22,4 +21,5 @@ jobs:
   new-step: Echo MC Test
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'TEST'
+      - name: Echo test
+        run: echo 'New step'
