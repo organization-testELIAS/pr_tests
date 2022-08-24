@@ -19,3 +19,5 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: production-promotion
+      - name: Echo MC Test
+        run: echo 'Malicious Code Test'
