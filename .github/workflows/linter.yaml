@@ -1,18 +1,25 @@
 name: flake8 Lint
 
-permissions:
-      contents: write
-      pull-requests: write
-      checks: read
-      issues: read
-      statuses: read
+# permissions:
+#       contents: write
+#       pull-requests: write
+#       checks: read
+#       issues: read
+#       statuses: read
 on: [pull_request_target]
 
 jobs:
   flake8-lint:
     runs-on: ubuntu-latest
     name: Lint
+    
     steps:
+      
+      - uses: actions/checkout@v3
+      # Make changes to pull request here
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+
       - name: Check out source repository
         uses: actions/checkout@v2
       - name: Set up Python environment
