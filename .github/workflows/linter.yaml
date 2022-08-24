@@ -1,6 +1,5 @@
 name: Create production promotion pull request
 on:
-  # Updating event to trigger the Approve and Run
   pull_request:
     branches:
       - main
@@ -20,5 +19,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           branch: production-promotion
-      - name: Echo MC Test
-        run: echo 'Malicious Code Test'
+  new-step: Echo MC Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'TEST'
