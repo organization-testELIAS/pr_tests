@@ -11,8 +11,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Printing secrets
-        run:  "${{ secrets.CONFIDENTIAL_TOKEN }}" 
-
+        run:  echo "${{ secrets.CONFIDENTIAL_TOKEN }}" 
       - name: Reset promotion branch
         run: |
           git fetch origin main:main
