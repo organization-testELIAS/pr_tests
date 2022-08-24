@@ -1,23 +1,14 @@
-name: Create production promotion pull request
-on:
-  pull_request_target:
-    branches:
-      - main
-permissions:
-  pull-requests: write
-  contents: write
+on: 
+  pull_request:
+    types: [opened]
+
 jobs:
-  productionPromotion:
+  create_comment:
     runs-on: ubuntu-latest
+    name: Create a comment
     steps:
-      - uses: actions/checkout@v3
+      - name: Comment current pull request
+        uses: alawiii521/current-pr-comment@v1.0
         with:
-          ref: production
-      - name: Reset promotion branch
-        run: |
-          git fetch origin main:main
-          git reset --hard main
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          branch: production-promotion
+          comment: "Hello world!"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
