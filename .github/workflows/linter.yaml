@@ -1,6 +1,6 @@
 name: Create production promotion pull request
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
 jobs:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: production
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Reset promotion branch
         run: |
           git fetch origin main:main
